@@ -21,6 +21,7 @@ export default function DislikedMenuSection({ disFood, setDisFood }) {
     setInput("");
   };
 
+  // 클릭한 음식 리스트에서 제거하는 함수
   const removeDislikedFood = (id) => {
     setDisFood(disFood.filter((item) => item.id !== id));
   };

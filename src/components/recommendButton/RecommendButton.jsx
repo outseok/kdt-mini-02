@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function RecommendButton() {
+export default function RecommendButton({tempList, handleTempList}) {
   return (
-    <div>RecommendButton</div>
+    <button onClick={handleTempList}>RecommendButton</button>
   )
 }
