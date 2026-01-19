@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./DislikedMenuSection.css";
 
 export default function DislikedMenuSection({ disFood, setDisFood }) {
   const [input, setInput] = useState("");
@@ -6,7 +7,7 @@ export default function DislikedMenuSection({ disFood, setDisFood }) {
   const addDislikedFood = () => {
     const value = input.trim();
     if (!value) return;
-    
+
     const exists = disFood.some((item) => item.food === value);
     if (exists) {
       setInput("");
@@ -25,32 +26,37 @@ export default function DislikedMenuSection({ disFood, setDisFood }) {
   };
 
   return (
-    <section>
-      <h2>😞 싫어하는 메뉴</h2>
+    <section className="dislike">
+      <h2 className="dislike-title">😞 싫어하는 메뉴</h2>
 
       {disFood.length === 0 ? (
-        <p>싫어하는 메뉴가 없습니다.</p>
+        <p className="dislike-empty">싫어하는 메뉴가 없습니다.</p>
       ) : (
-        <ul>
+        <ul className="dislike-list">
           {disFood.map((item) => (
-            <li key={item.id}>
-              {item.food}
-              <button type="button" onClick={() => removeDislikedFood(item.id)}>
-                X
+            <li key={item.id} className="dislike-item">
+              <span>{item.food}</span>
+              <button
+                className="dislike-remove"
+                type="button"
+                onClick={() => removeDislikedFood(item.id)}
+              >
+                ✕
               </button>
             </li>
           ))}
         </ul>
       )}
 
-      <div>
+      <div className="dislike-add">
         <input
+          className="dislike-input"
           type="text"
           placeholder="싫어하는 음식 추가"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button type="button" onClick={addDislikedFood}>
+        <button className="dislike-btn" type="button" onClick={addDislikedFood}>
           추가
         </button>
       </div>
