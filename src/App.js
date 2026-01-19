@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import MenuCard from "./MenuCard";
 
 // 컴포넌트
 import Filter from './components/filterSection/FilterSection.jsx'
