@@ -2,7 +2,9 @@
 .filter-section {
   padding: 16px;
   border-bottom: 1px solid #e5e7eb;
-  display: flex
+  display: flex;
+  justify-content: center;
+  gap: 100px; 
 }
 
 /* 그룹 단위 */
@@ -14,12 +16,10 @@
 
 .filter-group1{
     display: inline-block;
-    margin: auto;   
 }
 
 .filter-group2{
     display: inline-block;
-    margin: auto;
 }
 
 /* 제목 */
